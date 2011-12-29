@@ -28,6 +28,7 @@ module Jslib
           puts "  minified:     %s" % version.minified if version.has_minified?
           puts "  uncompressed: %s" % version.uncompressed if version.has_uncompressed?
         end
+        puts ""
       end
     end
 

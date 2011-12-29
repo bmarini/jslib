@@ -1,0 +1,5 @@
+name: sammy
+versions:
+  - version: latest
+    uncompressed: https://github.com/quirkey/sammy/raw/master/lib/sammy.js
+    minified: https://github.com/quirkey/sammy/raw/master/lib/min/sammy-latest.min.js

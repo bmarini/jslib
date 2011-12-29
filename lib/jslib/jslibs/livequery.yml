@@ -1,0 +1,4 @@
+name: livequery
+versions:
+  - version: latest
+    uncompressed: https://raw.github.com/brandonaaron/livequery/master/jquery.livequery.js
