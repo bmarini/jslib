@@ -1,0 +1,6 @@
+name: jquery
+versions:
+  - version: 1.7.1
+    minified: http://code.jquery.com/jquery-1.7.1.min.js
+    uncompressed: http://code.jquery.com/jquery-1.7.1.js
+    
