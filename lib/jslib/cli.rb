@@ -8,14 +8,13 @@ module Jslib
     def install(*jslibs)
       jslibs.each do |jslib|
         lib      = Jslib.lib(jslib)
-        raw      = Net::HTTP.get( URI( lib.versions.last.minified ) )
-        filename = "#{lib.name}.#{lib.versions.last}.min.js"
+        raw      = Net::HTTP.get( URI( lib.resolved_url ) )
 
-        File.open(filename, "w") do |f|
+        File.open(lib.resolved_name, "w") do |f|
           f.write(raw)
         end
 
-        puts "Installed #{filename}"
+        puts "Installed #{lib.resolved_name}"
       end
     end
 

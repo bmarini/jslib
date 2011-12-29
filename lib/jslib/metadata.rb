@@ -17,6 +17,14 @@ module Jslib
         !( @uncompressed.nil? || @uncompressed.empty? )
       end
 
+      def resolved_name
+        has_minified? ? "#{@version}.min" : @version
+      end
+
+      def resolved_url
+        has_minified? ? minified : uncompressed
+      end
+
       def to_s
         @version
       end
@@ -27,6 +35,14 @@ module Jslib
     def initialize(data)
       @name     = data['name']
       @versions = data['versions'].map { |v| Version.new(v) }
+    end
+
+    def resolved_name
+      @name + "." + @versions.first.resolved_name + ".js"
+    end
+
+    def resolved_url
+      @versions.first.resolved_url
     end
   end
 end
